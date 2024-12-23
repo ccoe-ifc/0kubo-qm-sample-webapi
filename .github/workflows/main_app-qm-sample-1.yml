@@ -1,53 +1,64 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# Azure Web Apps Deployアクションに関するドキュメント: https://github.com/Azure/webapps-deploy
+# その他のAzure向けGitHub Actions: https://github.com/Azure/actions
 
 name: Build and deploy ASP.Net Core app to Azure Web App - app-qm-sample-1
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main          # mainブランチにプッシュされた際にトリガー
+  workflow_dispatch:  # 手動でワークフローをトリガー可能
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest  # ビルドジョブの実行環境はWindows
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4  # ソースコードをリポジトリからチェックアウト
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '6.0.x'  # .NET 6.0環境をセットアップ
+
+      - name: Restore dependencies
+        run: dotnet restore  # 依存関係を復元
+
+      - name: Run static code analysis
+        run: dotnet build --configuration Release /warnaserror  # 静的解析を実施し、警告をエラーとして扱う
+
+      - name: Check code formatting
+        run: dotnet format --check  # コードフォーマットのチェックを実施（修正はしない）
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release  # アプリケーションをRelease構成でビルド
 
+      # ビルド成果物を指定のディレクトリにパブリッシュ
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          name: .net-app  # アーティファクトの名前
+          path: ${{env.DOTNET_ROOT}}/myapp  # アーティファクトの保存パス
 
   deploy:
-    runs-on: windows-latest
-    needs: build
+    runs-on: windows-latest  # デプロイジョブの実行環境はWindows
+    needs: build  # buildジョブの完了後に実行
     environment:
-      name: 'Production'
+      name: 'Production'  # デプロイ先の環境名
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write  # JWTトークンの作成を許可（Azure認証に必要）
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
-      
+          name: .net-app  # ビルドジョブで作成したアーティファクトをダウンロード
+
+      # Azureにログイン。必要な認証情報はGitHub Secretsから取得
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -59,7 +70,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'app-qm-sample-1'
-          slot-name: 'Production'
-          package: .
-          
+          app-name: 'app-qm-sample-1' # デプロイするAzure Web Appの名前
+          slot-name: 'Production' # デプロイスロット名（通常は'Production'）
+          package: . # デプロイするアプリケーションのパス
