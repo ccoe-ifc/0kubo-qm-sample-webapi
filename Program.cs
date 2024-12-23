@@ -8,6 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+app.UseHttpsRedirection();  // HTTPSにリダイレクト
+app.UseRouting();           // ルーティングを有効化
+
 app.MapGet("/", async context =>
 {
     await context.Response.WriteAsync("0");
