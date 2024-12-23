@@ -1,0 +1,15 @@
+C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.exe
+C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.deps.json
+C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.runtimeconfig.json
+C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.dll
+C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.pdb
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.csproj.AssemblyReference.cache
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.AssemblyInfoInputs.cache
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.AssemblyInfo.cs
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.dll
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\refint\SampleWebAPI.dll
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.pdb
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.genruntimeconfig.cache
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\ref\SampleWebAPI.dll
