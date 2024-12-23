@@ -28,14 +28,13 @@ jobs:
         run: dotnet build --configuration Release /warnaserror  # 静的解析を実施し、警告をエラーとして扱う
 
       - name: Check code formatting
-        run: dotnet format --check  # コードフォーマットのチェックを実施（修正はしない）
+        run: dotnet format --check SampleWebAPI.csproj  # コードフォーマットのチェックを実施（修正はしない）
 
       - name: Build with dotnet
         run: dotnet build --configuration Release  # アプリケーションをRelease構成でビルド
 
-      # ビルド成果物を指定のディレクトリにパブリッシュ
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"  # ビルド成果物を指定のディレクトリにパブリッシュ
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
