@@ -24,11 +24,17 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore  # 依存関係を復元
 
-      - name: Run static code analysis
-        run: dotnet build --configuration Release /warnaserror  # 静的解析を実施し、警告をエラーとして扱う
+      - name: Install dotnet format tool
+        run: dotnet tool install -g dotnet-format
+        # dotnet format ツールをインストール
 
       - name: Check code formatting
-        run: dotnet format --check SampleWebAPI.csproj  # コードフォーマットのチェックを実施（修正はしない）
+        run: dotnet format --check
+        # コードフォーマットのチェックを実施
+
+      - name: Run static code analysis
+        run: dotnet build --configuration Release /warnaserror
+        # 静的解析を実施し、警告をエラーとして扱う
 
       - name: Build with dotnet
         run: dotnet build --configuration Release  # アプリケーションをRelease構成でビルド
