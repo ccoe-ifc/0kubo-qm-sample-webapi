@@ -1,3 +1,4 @@
+C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\web.config
 C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.exe
 C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.deps.json
 C:\Users\masayoshi\Documents\work\SampleWebAPI\bin\Debug\net6.0\SampleWebAPI.runtimeconfig.json
@@ -8,6 +9,10 @@ C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.Gen
 C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.AssemblyInfoInputs.cache
 C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.AssemblyInfo.cs
 C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\scopedcss\bundle\SampleWebAPI.styles.css
 C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.dll
 C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\refint\SampleWebAPI.dll
 C:\Users\masayoshi\Documents\work\SampleWebAPI\obj\Debug\net6.0\SampleWebAPI.pdb

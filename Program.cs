@@ -1,19 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
+﻿using System.Runtime.CompilerServices;
 
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
+// InternalsVisibleTo を使用する場合はこちらをコメントアウト解除
+// [assembly: InternalsVisibleTo("SampleWebAPI.Tests")]
 
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-
-app.UseHttpsRedirection();  // HTTPSにリダイレクト
-app.UseRouting();           // ルーティングを有効化
-
-app.MapGet("/", async context =>
+public class Program
 {
-    await context.Response.WriteAsync("0");
-});
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+        var app = builder.Build();
 
-app.Run();
+        app.UseHttpsRedirection();
+        app.UseRouting();
+
+        app.MapGet("/", async context =>
+        {
+            await context.Response.WriteAsync("0");
+        });
+
+        app.Run();
+    }
+}
